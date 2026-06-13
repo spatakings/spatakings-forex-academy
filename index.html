@@ -1,11 +1,86 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SpataKings Forex Academy</title>
+  <title>SpataKings Forex Academy - Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0b1220;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #22c55e;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .dashboard {
+      text-align: center;
+      padding: 40px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>SpataKings Forex Academy</h1>
-  <p>Your Forex Learning Platform</p>
+
+<!-- LOGIN PAGE -->
+<div class="box" id="loginBox">
+  <h2>Login</h2>
+  <input type="text" id="user" placeholder="Username">
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard hidden" id="dashboard">
+  <h1>Welcome to SpataKings Forex Academy 📊</h1>
+  <p>You are now logged in (demo system)</p>
+</div>
+
+<script>
+function login() {
+  let user = document.getElementById("user").value;
+  let pass = document.getElementById("pass").value;
+
+  if(user !== "" && pass !== "") {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("dashboard").classList.remove("hidden");
+  } else {
+    alert("Please enter username and password");
+  }
+}
+</script>
+
 </body>
 </html>
